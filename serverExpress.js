@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 const fs = require("fs");
 const cors = require("cors");
 const app = express();
-const port = 3001;
+const port = 4000;
 
 let rawData = fs.readFileSync("jsonData.json");
 let jsonData = JSON.parse(rawData);
@@ -16,7 +16,7 @@ app.use(cors());
 //Loging all requests
 
 app.get("/", (req, res) => {
-  res.send("jsonData", "<h1>Hello</h1>");
+  res.send(jsonData);
 });
 
 // get pokemon by id
