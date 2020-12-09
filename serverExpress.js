@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 const fs = require("fs");
 const cors = require("cors");
 const app = express();
-const port = 4000;
+const port = process.env.PORT || "4000";
 
 let rawData = fs.readFileSync("jsonData.json");
 let jsonData = JSON.parse(rawData);
@@ -38,7 +38,7 @@ app.get("/pokemon/:id/:info", (req, res) => {
   if (pokemon) {
     res.json(pokemon.name.english);
   } else {
-    res.json({ message: `Pokemon really is shit ${pokemonId} doesn't exist` });
+    res.json({ message: `Pokemon ${pokemonId} doesn't exist` });
   }
 });
 
