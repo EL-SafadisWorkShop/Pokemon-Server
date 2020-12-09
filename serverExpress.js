@@ -16,7 +16,7 @@ app.use(cors());
 //Loging all requests
 
 app.get("/", (req, res) => {
-  res.send(jsonData);
+  res.send("<h1>Hello</h1>");
 });
 
 // get pokemon by id
