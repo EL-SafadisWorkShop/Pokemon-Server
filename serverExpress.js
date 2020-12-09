@@ -38,7 +38,7 @@ app.get("/pokemon/:id/:info", (req, res) => {
   if (pokemon) {
     res.json(pokemon.name.english);
   } else {
-    res.json({ message: `Pokemon ${pokemonId} doesn't exist` });
+    res.json({ message: `Pokemon really is shit ${pokemonId} doesn't exist` });
   }
 });
 
